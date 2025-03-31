@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .card {
+            background: linear-gradient(145deg, #e6e6e6, #ffffff);
+            box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .credit-card {
+            background: linear-gradient(135deg, #00449e, #0066cc);
+            box-shadow: 
+                inset 0 0 10px rgba(255,255,255,0.2),
+                5px 5px 15px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4 md:p-8">
+    <div class="max-w-7xl mx-auto">
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">My Cards</h1>
+            <p class="text-gray-600">Manage your credit cards</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Card 1 -->
+            <div class="card p-6">
+                <div class="credit-card p-6 rounded-xl text-white mb-4 relative overflow-hidden">
+                    <div class="absolute top-4 right-4">
+                        <i class="bi bi-credit-card text-2xl"></i>
+                    </div>
+                    <div class="mt-8">
+                        <p class="font-mono text-xl tracking-wider">**** **** **** 4589</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <div>
+                                <p class="text-xs opacity-70">Card Holder</p>
+                                <p class="font-semibold">John Doe</p>
+                            </div>
+                            <div>
+                                <p class="text-xs opacity-70">Expires</p>
+                                <p class="font-semibold">12/25</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h3 class="font-semibold">Premium Card</h3>
+                        <p class="text-sm text-gray-600">Active</p>
+                    </div>
+                    <button class="p-2 rounded-full hover:bg-gray-100 transition-colors">
+                        <i class="bi bi-three-dots-vertical"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card p-6">
+                <div class="credit-card p-6 rounded-xl text-white mb-4 relative overflow-hidden" style="background: linear-gradient(135deg, #2d3436, #636e72);">
+                    <div class="absolute top-4 right-4">
+                        <i class="bi bi-credit-card text-2xl"></i>
+                    </div>
+                    <div class="mt-8">
+                        <p class="font-mono text-xl tracking-wider">**** **** **** 7856</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <div>
+                                <p class="text-xs opacity-70">Card Holder</p>
+                                <p class="font-semibold">Jane Smith</p>
+                            </div>
+                            <div>
+                                <p class="text-xs opacity-70">Expires</p>
+                                <p class="font-semibold">09/24</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h3 class="font-semibold">Business Card</h3>
+                        <p class="text-sm text-gray-600">Active</p>
+                    </div>
+                    <button class="p-2 rounded-full hover:bg-gray-100 transition-colors">
+                        <i class="bi bi-three-dots-vertical"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Add New Card Button -->
+            <div class="card p-6 flex items-center justify-center cursor-pointer hover:bg-gray-50">
+                <div class="text-center">
+                    <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-3">
+                        <i class="bi bi-plus text-blue-600 text-2xl"></i>
+                    </div>
+                    <p class="font-semibold text-blue-600">Add New Card</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Transactions -->
+        <div class="mt-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Recent Transactions</h2>
+            <div class="card p-6">
+                <div class="divide-y">
+                    <div class="py-4 flex justify-between items-center">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                                <i class="bi bi-cart text-blue-600"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Online Purchase</p>
+                                <p class="text-sm text-gray-600">Yesterday</p>
+                            </div>
+                        </div>
+                        <p class="font-semibold text-red-500">-$84.99</p>
+                    </div>
+                    <div class="py-4 flex justify-between items-center">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                                <i class="bi bi-arrow-down-circle text-green-600"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Deposit</p>
+                                <p class="text-sm text-gray-600">Sep 24, 2023</p>
+                            </div>
+                        </div>
+                        <p class="font-semibold text-green-500">+$500.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add interactivity for the menu buttons
+        document.querySelectorAll('.bi-three-dots-vertical').forEach(button => {
+            button.addEventListener('click', (e) => {
+                // Prevent event bubbling
+                e.stopPropagation();
+                // Here you can add menu functionality
+                alert('Card options menu clicked');
+            });
+        });
+
+        // Add new card functionality
+        document.querySelector('.cursor-pointer').addEventListener('click', () => {
+            alert('Add new card form will open here');
+        });
+    </script>
+<script>document.body.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); return }, { passive: false })</script>
+	</body>
+</html>
